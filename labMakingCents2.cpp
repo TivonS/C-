@@ -42,7 +42,7 @@ int main()
 
 	/*
 	adding up all the coin values and telling the user how much
-	is in their pocket.
+	is in their pocket and allowed correct rounding.
 	*/
 	std::cout << std::fixed << std::setprecision(2) << penny, nickel, dime, quarter,
 		halfDollar, dollar;
