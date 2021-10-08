@@ -10,6 +10,7 @@ and logic was completed without outside assistance.
 Signature:
 */
 #include <iostream>
+#include <iomanip>
 
 
 int main()
@@ -43,6 +44,8 @@ int main()
 	adding up all the coin values and telling the user how much
 	is in their pocket.
 	*/
+	std::cout << std::fixed << std::setprecision(2) << penny, nickel, dime, quarter,
+		halfDollar, dollar;
 	std::cout << "You have $" << (penny * 1 + nickel * 5 + dime * 10 + quarter
 		* 25 + halfDollar * 50 + dollar * 100) / 100 << " of change in your pocket"
 		<< std::endl;
