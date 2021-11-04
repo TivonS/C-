@@ -1,0 +1,43 @@
+/*
+Tivon Straub
+11/3/2021
+This is a practice to be able to identify to what power of ten the number is.
+
+I hereby certify that this program represents my work and that the design
+and logic was completed without outside assistance.
+
+Signature:
+*/
+#include <iostream>
+
+
+int main()
+{
+	/*created one variable to represent the number user inputtedand one number
+	to represent number of digits*/
+	int Anumber;
+	int number = 0;
+
+	/*asked user their number and stored that value*/
+	std::cout << "Give me a number: ";
+	std::cin >> Anumber;
+
+	system ("cls");
+
+	/* If user entered a negative number this turns it positive to 
+	do the calculation below*/
+	if (Anumber < 1)
+	{
+		Anumber = Anumber * -1;
+	}
+
+	/* Dividing the entered number by ten every loop until the number is one or
+	less than one and every time it goes through the loop add one to ticker*/
+	while (Anumber >= 1)
+	{
+		Anumber = Anumber / 10;
+		number = number + 1;
+	}
+	std::cout << "Their are " << number << " digits in the number"  
+		<< std::endl;
+}
