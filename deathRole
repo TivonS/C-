@@ -1,13 +1,13 @@
 #include <iostream>
 #include <time.h>
 
-
 int main()
 {
     srand(time(NULL));
     int size;
-  
-
+    int cDeath;
+    int yDeath;
+    char roll;
     std::cout << "How big is the bet? ";
     std::cin >> size;
    
@@ -16,14 +16,22 @@ int main()
 
     while (size > 1)
     {
-    std::cout << "I rolled a " << rand() % size + 1  << std::endl;
-    size = --size;
-    if (size > 1)
-    {
-        std::cout << "you rolled a " << rand() % size + 1 << std::endl;
-        size =  --size;
+        cDeath = rand() % size + 1;
+        std::cout << "I rolled a " << cDeath << std::endl;
+        size = cDeath;
+       if (cDeath <= 1)
+        {
+            std::cout << "I win sucker!";
+            break;
+        }
+        yDeath = rand() % size + 1;
+        std::cout << "You roll a " << yDeath << std::endl;
+        size = yDeath;
+        if (yDeath <= 1)
+        {
+            std::cout << "you win, I'll get you next time!";
+            break;
+        } 
     }
-
-    } 
-    
+   
 }
