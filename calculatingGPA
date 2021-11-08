@@ -1,0 +1,64 @@
+/*
+ Tivon Straub
+ 11/8/2021
+ The purpose of this project is to ask the user their grades, after given the
+ grades the computer adds up the different letters and tells the user their GPA
+
+ I hereby certify that this program represents my work and that the design
+and logic was completed without outside assistance.
+
+Signature:
+ */
+#include <iostream>
+
+
+int main()
+{
+    //create int letters to capture later one
+    int A = 0;
+    int B = 0;
+    int C = 0;
+    int D = 0;
+    int F = 0;
+    char grade;
+    int q = 0;
+
+    //capture number to corresponding letter grade increment 1
+	do
+	{
+		//ask user for one grade
+		std::cout << "Give me a grade to capture ";
+		std::cin >> grade;
+		system("cls");
+		if (grade = A)
+		{
+			A = ++A;
+		}
+		else if (grade = B)
+		{
+			B = ++B;
+		}
+		else if (grade = C)
+		{
+			C = ++C;
+		}
+		else if (grade = D)
+		{
+			D = ++D;
+		}
+		else if (grade = F)
+		{
+			F = ++F;
+		}
+		std::cout << "Would you like to input another grade?";
+		std::cin >> q;
+	} while (q <= 0); //ask if they want to repeat proccess
+
+	//if they said no display their grades and GPA
+	std::cout << "A: " << A << std::endl;
+	std::cout << "B: " << B << std::endl;
+	std::cout << "C: " << C << std::endl;
+	std::cout << "D: " << D << std::endl;
+	std::cout << "F: " << F << std::endl;
+
+}
