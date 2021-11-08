@@ -1,0 +1,29 @@
+#include <iostream>
+#include <time.h>
+
+
+int main()
+{
+    srand(time(NULL));
+    int size;
+  
+
+    std::cout << "How big is the bet? ";
+    std::cin >> size;
+   
+
+    system("cls");
+
+    while (size > 1)
+    {
+    std::cout << "I rolled a " << rand() % size + 1  << std::endl;
+    size = --size;
+    if (size > 1)
+    {
+        std::cout << "you rolled a " << rand() % size + 1 << std::endl;
+        size =  --size;
+    }
+
+    } 
+    
+}
