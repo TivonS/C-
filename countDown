@@ -1,0 +1,35 @@
+/*
+Tivon Straub
+11/8/2021
+The purpose of this lab is for the user put in any number and the computer will
+count down from the origianl number.
+
+ I hereby certify that this program represents my work and that the design
+and logic was completed without outside assistance.
+
+Signature:
+*/
+#include <iostream>
+
+int main()
+{
+	//creating variables for the number and increment number is decreasing by.
+	int number;
+	int increments;
+
+	//asking the user for what number and increment they want
+	std::cout << "What number do you want to start on? ";
+	std::cin >> number;
+	std::cout << "How fast do you wanna count down? ";
+	std::cin >> increments;
+	number = number + increments;	/*to start the count down from number 
+	have to be one above the number*/
+
+	// as long as the number is above zero keep counting down
+	do 
+	{
+		number = number - increments;
+		std::cout << number << std::endl;
+	} while ( number > 0 );
+	std::cout << "BLAST OFF!!!";	//telling me and the user count down is done
+}
