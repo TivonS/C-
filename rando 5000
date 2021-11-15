@@ -1,0 +1,35 @@
+/*
+Tivon Straub
+11/15/2021
+The purpose of this file is to randomly select 1,000 numbers from 1-5,000 and
+store that data into a file which is titled rando 5,000.
+
+I hereby certify that this program represents my work and that the design
+and logic was completed without outside assistance.
+
+Signature:
+*/
+#include <iostream>
+#include <fstream>
+#include <time.h>
+
+
+int main()
+{
+	std::fstream randomNumbers;	//create the file
+	srand(time(NULL));	//create a time table
+	int ticker = 0;	
+	
+
+	randomNumbers.open("rando5000.txt", std::ios::out);
+
+	//creating and storing a number 1-5000
+	while (ticker < 1000)
+	{
+		randomNumbers << rand() % 5000 + 1   << std::endl;
+		++ticker;
+	}
+	randomNumbers.close();
+
+	return 0;
+}
