@@ -1,0 +1,37 @@
+/*
+Tivon Straub 
+11/17/2021
+
+The purpose of this lab if to calculate how much compound interest someone 
+makes. specificially this asks $1000, 5% interest over 10 years.
+*/
+#include <iostream>
+
+int main()
+{
+	double invest, interest = 1.05, amount = 0;	
+	int year, totalYear;
+
+	//collecting data for invest and year
+	std::cout << 
+		"Hi welcome to coperate bank how much would you like to invest today? \n";
+	std::cin >> invest;
+
+	std::cout << "And for for how many years? \n";
+	std::cin >> year;
+	totalYear = year;
+
+	system("cls");
+
+	// this is the equation a = p(1+r)^n
+	while (year > 0)
+	{
+		amount = invest * interest;
+		year = year - 1;
+		interest = interest * 1.05;
+	}
+
+	//telling the user how much money they have made over the given time period
+	std::cout << "with 5% interest you will have $" << amount << " in " 
+		<< totalYear << " years";
+}
