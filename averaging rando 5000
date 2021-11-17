@@ -1,0 +1,42 @@
+/*
+Tivon Straub
+11/15/2021
+The purpose of this program is to find the average value of rando 5000 file 
+and display this number.
+
+I hereby certify that this program represents my work and that the design
+and logic was completed without outside assistance.
+
+Signature:
+*/
+#include <iostream>
+#include <fstream>
+#include <time.h>
+
+
+int main()
+{
+    int average = 0;
+    int line = 0;
+    std::fstream randomNumbers;
+
+    randomNumbers.open("rando5000.txt", std::ios::in);
+
+    if (randomNumbers.is_open())
+    {
+        while (!randomNumbers.eof())
+        {
+            randomNumbers >> line;
+            average = average + line;
+        }
+        randomNumbers.close();
+    }
+    else
+    {
+        std::cout << "unable to find find/open file" << std::endl;
+    }
+
+    std::cout << "Average: " << average / 1000 << std::endl;
+
+    return 0;
+}
