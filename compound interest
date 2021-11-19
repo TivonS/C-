@@ -1,21 +1,25 @@
 /*
-Tivon Straub 
+Tivon Straub
 11/17/2021
 
-The purpose of this lab if to calculate how much compound interest someone 
+The purpose of this lab if to calculate how much compound interest someone
 makes. specificially this asks $1000, 5% interest over 10 years.
+
+I hereby certify that this program represents my work and that the design
+and logic was completed without outside assistance.
+
+Signature:
 */
 #include <iostream>
 #include <iomanip>
 
+
 int main()
 {
-	double invest, interestA = 1.05, interestB = 1.06, interestC = 1.07, 
-		interestD = 1.08, interestE = 1.09, interestF = 1.1, amount = 0;	
-	int year, totalYear =0;
-
-	//collecting data for invest and year
-	std::cout << 
+	double invest, interestA = 1.05, interestB = 1.06, interestC = 1.07,
+		interestD = 1.08, interestE = 1.09, interestF = 1.1, amount = 0;
+	int year, totalYear = 0;
+	std::cout <<
 		"Hi welcome to coperate bank how much would you like to invest today? \n";
 	std::cin >> invest;
 
@@ -24,16 +28,60 @@ int main()
 
 	system("cls");
 
-	std::cout << std::fixed << std::setprecision(2);// << amount;
-	// this is the equation a = p(1+r)^n
+	std::cout << std::fixed << std::setprecision(2);
+	// using the equation a = p(1+r)^n to find compund interest
 	while (year > 0)
 	{
 		year = year - 1;
 		amount = invest * interestA;
 		interestA = interestA * 1.05;
 		//telling the user how much money they have made over the given time period
-		std::cout << year << " years away you will have $" << amount << 
-			" in your account" << std::endl;
-	}
-}
+		//repeat these steps with each percent increase.
+		std::cout << "With 5% interest " << year << 
+			" years away you from return will have $" << amount << " in your account" 
+			<< std::endl;
 
+		amount = 0;
+		amount = invest * interestB;
+		interestB = interestB * 1.06;
+
+		std::cout << "With 6% interest " << year <<
+			" years away you from return will have $" << amount << " in your account"
+			<< std::endl;
+
+		amount = 0;
+		amount = invest * interestC;
+		interestC = interestC * 1.07;
+
+		std::cout << "With 7% interest " << year <<
+			" years away you from return will have $" << amount << " in your account"
+			<< std::endl;
+
+		amount = 0;
+		amount = invest * interestD;
+		interestD = interestD * 1.08;
+
+		std::cout << "With 8% interest " << year <<
+			" years away you from return will have $" << amount << " in your account"
+			<< std::endl;
+
+		amount = 0;
+		amount = invest * interestE;
+		interestE = interestE * 1.08;
+
+		std::cout << "With 9% interest " << year <<
+			" years away you from return will have $" << amount << " in your account"
+			<< std::endl;
+
+		amount = 0;
+		amount = invest * interestF;
+		interestF = interestF * 1.08;
+
+		std::cout << "With 10% interest " << year <<
+			" years away you from return will have $" << amount << " in your account"
+			<< std::endl;
+
+		std::cout << std::endl;		//create a space between each while loop
+	}
+	std::cout << "Thank you valued customer for your time today!";
+}
