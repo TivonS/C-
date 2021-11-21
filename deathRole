@@ -1,5 +1,7 @@
 #include <iostream>
 #include <time.h>
+#include <windows.h>
+
 
 int main()
 {
@@ -25,6 +27,7 @@ int main()
             break;
         }
         yDeath = rand() % size + 1;
+        system("pause");
         std::cout << "You roll a " << yDeath << std::endl;
         size = yDeath;
         if (yDeath <= 1)
@@ -32,6 +35,8 @@ int main()
             std::cout << "you win, I'll get you next time!";
             break;
         } 
+        std::cout << "rolling..." << std::endl;
+        Sleep(2000);
     }
    
 }
