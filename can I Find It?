@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+
+
+int main()
+{
+	/* This part allows the user to enter text and enter a word they want to
+	be counted than the computer counts it. */
+	std::string input, word;
+	int count = 0;
+	int lookFrom = 0;
+
+	std::cout << "Give me input, write!: ";
+	std::getline(std::cin, input);
+
+	std::cout << "What word will I be counting:";
+	std::cin >> word;
+
+	while (input.find(word, lookFrom) != std::string::npos)
+	{
+		++count;
+		lookFrom = input.find(word, lookFrom) +1;
+	}
+
+	std::cout << "This input had " << count << word << std::endl;
+	
+	/* this code put one letter for each line for whatever statement you put 
+	in the parenthesis*/
+	std::string str = "word";
+	while (str.size ()> 0)
+	{
+		std::string temp = str.substr(0, 1);
+		std::cout << temp << std::endl;
+		str = str.substr(1);
+			
+	}
+}
