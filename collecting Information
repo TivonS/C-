@@ -33,6 +33,7 @@ int main()
 
             std::cout << name << " Would you like to add another applicate?";
             std::cin >> decision;
+            std::cin.get(); //throw away the enter key.
             switch (decision)
             {
             case 'no':
