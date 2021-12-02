@@ -1,0 +1,188 @@
+#include <iostream>
+#include <iomanip>
+#include <time.h>
+
+using namespace std;
+
+void heightConverter();
+void findingMPG();
+void troyPounds();
+void minMax();
+
+
+int main()
+{
+    int playAgain = 1;
+    int program;
+
+   
+    double troyPounds = 0.0;
+    int pennyCount, nickelCount, quarterCount, dimeCount, halfDollarCount = 0;
+    int totalCents;
+    int guess, secretNumber;
+    int guesses = 0;
+    srand(time(NULL));
+    secretNumber = rand() % 100 + 1;
+
+    do 
+    {
+        cout <<
+            "Welcome to the interface which program would you like to play?" << endl;
+        cout << "1 is height \n 2 is for finding mpg \n3 is for converting troy pounds"
+            << "\n4 is for identifying largest number\n 5 is for guessing your random number"
+            << "\n 6 is to quit";
+        cin >> program;
+        switch (program)
+        {
+
+
+
+
+
+
+            //Program 2
+        case '1':
+            heightConverter(); //this is a Function call
+            break;
+            //Program 3
+        case '2':
+            findingMPG();
+            break;
+
+            //Program 6
+        case '3':         
+            troyPounds();
+            break;
+
+        case '4':
+        
+            //Ask for change          
+            std::cout << "How many pennies do you have?\n";
+            std::cin >> pennyCount;
+            std::cout << "\nHow many nickels do you have?\n";
+            std::cin >> nickelCount;
+            std::cout << "\nHow many quarters do you have?\n";
+            std::cin >> quarterCount;
+            std::cout << "\nHow many dimes do you have?\n";
+            std::cin >> dimeCount;
+            std::cout << "\nHow many half dollars you have?\n";
+            std::cin >> halfDollarCount;
+            std::cout << std::endl;
+
+            totalCents = pennyCount + nickelCount * 5 + quarterCount * 25
+                + dimeCount * 10 + halfDollarCount * 50;
+            system("pause");
+            system("cls");        
+            std::cout << totalCents;
+
+            //Print values
+            std::cout << std::setw(8);
+            std::cout.setf(std::ios::left);
+            std::cout << "Cents:";
+            std::cout << std::setw(10);
+            std::cout.setf(std::ios::right);
+            std::cout << totalCents << std::endl;
+            std::cout << std::setw(8);
+            std::cout.setf(std::ios::left);
+            std::cout << "Dollars:";
+            std::cout << std::setw(7);
+            std::cout.setf(std::ios::right);
+            std::cout << totalCents / 100;
+            std::cout << "." << (totalCents % 100) / 10;
+            std::cout << (totalCents % 100) % 10 << std::endl;
+            break;
+
+        case'5':
+            minMax();   //call to function
+
+            break;
+
+        case'6':
+
+            do
+            {
+                cout << "Please guess my number, it's in the range of 1 - 100: ";
+                cin >> guess;
+
+                if (guess > secretNumber)
+                    cout << "Your guess is too high." << endl;
+                else if (guess < secretNumber)
+                    cout << "Your guess it too low." << endl;
+
+                guesses++;
+            } while (guesses < 5 && guess != secretNumber);
+
+            cout << "The secret number was " << secretNumber << "!" << endl;
+
+        case 7:
+            break;
+        default:
+        {
+            cout << "Option not recognized please try again";
+        }
+
+        }
+    } while (playAgain != 7);
+}
+
+
+void heightConverter()
+{
+    int userHeight = 0;
+
+    std::cout << "Please enter your height in inches: ";
+    std::cin >> userHeight;
+
+    std::cout << "You are " << userHeight / 12 << "foot, " 
+        << userHeight % 12 << " inches tall.";
+
+    return;
+}
+
+
+void findingMPG()
+{
+     double milesDriven, gasUsed;
+    std::cout << "\nHow many miles did you drive on a recent vacation trip?\n";
+    std::cin >> milesDriven;
+    std::cout << "How many gallons of gas did you use?\n";
+    std::cin >> gasUsed;
+    std::cout << "You achieved " << milesDriven / gasUsed
+        << " miles per gallon on that trip.\n";
+}
+
+
+void troyPounds()
+{
+    double tPounds;
+
+    cout << "how many troy pounds do you have? ";
+    cin >> tPounds;
+    cout << fixed;
+    cout << "you have " << tPounds * 12 * 31.1035;
+}
+
+
+// takes 8 whole number inputs and displays smallest and largest in data set.
+void minMax()
+{
+    int input, min, max;
+
+    cout << "please enter eight whole numbers." << endl;
+
+    for (int i = 0; i < 8; i++)
+    {
+        cout << "Please enter numbers " << i + 1 << ": ";
+        cin >> input;
+
+        if (i == 0)
+            min = max = input;
+        else if (input < min)
+            min = input;
+        else if (input > max)
+            max = input;
+    }
+
+    cout << "The smallest value entered was " << min << "." << endl;
+    cout << "The largest value entered was " << max << "." << endl;
+}
