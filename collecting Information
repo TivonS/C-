@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+
+int main()
+{
+    std::fstream captureHumanInformation;
+    std::string name, band, food, quote;
+    char decision;
+    int repeat = 1;
+
+    captureHumanInformation.open("HumanInformation.txt", std::ios::out);
+
+    if (captureHumanInformation.is_open())
+    {
+        do
+        {
+            std::cout << "Enter name: ";
+            std::getline(std::cin, name);
+
+            std::cout << "Enter favorite band: ";
+            std::getline(std::cin, band);
+
+            std::cout << "Enter favorite food: ";
+            std::getline(std::cin, food);
+
+            std::cout << "Enter favorite quote: ";
+            std::getline(std::cin, quote);
+
+            captureHumanInformation << name + ": loves " + band + " , " + food + " , " + quote
+                << std::endl;
+
+            std::cout << name << " Would you like to add another applicate?";
+            std::cin >> decision;
+            switch (decision)
+            {
+            case 'no':
+            case 'n':
+                repeat = 0;
+                break;
+            }
+            system("cls");
+        } while (repeat != 0);
+        captureHumanInformation.close();
+    }
+    else
+    {
+        std::cout << "unable to caputre humans information";
+        return -1;
+    }
+    return 0;
+}
