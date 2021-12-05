@@ -1,0 +1,100 @@
+#include <iostream>
+
+
+void twoNumbers();
+void threeNumbers();
+void fourNumbers();
+void fiveNumbers();
+void sixNumbers();
+void sevenNumbers();
+void eightNumbers();
+void nineNumbers();
+void tenNumbers();
+
+
+int main()
+{
+    int compare;
+
+    std::cout << "number one = 67\n" << "number two = 57\n"
+        << "number three = 48\n" << "number four = 27\n" << "number five = 37\n"
+        << "number six = 85\n" << "number seven = 2\n" << "number eight = 72"
+        << "number nine = 44\n" << "number ten = 92\n";
+    do
+    {
+        std::cout << "How many numbers would you like to compare - 11 to quit: ";
+        std::cin >> compare;
+
+        switch (compare)
+        {
+        case 1:
+            std::cout << "not a option try again\n";
+            break;
+        case 2:
+            twoNumbers();
+            break;
+        case 3:
+            threeNumbers();
+            break;
+        case 4:
+            fourNumbers();
+            break;
+        case 5:
+            fiveNumbers();
+            break;
+        case 6:
+            sixNumbers();
+            break;
+        case 7:
+            sevenNumbers();
+            break;
+        case 8:
+            eightNumbers();
+            break;
+        case 9:
+            nineNumbers();
+            break;
+        case 10:
+            tenNumbers();
+            break;
+
+        }
+
+    } while (compare < 11);
+}
+void twoNumbers()
+{
+    std::cout << "67 > 57\n";
+}
+void threeNumbers()
+{
+    std::cout << " 67 > 57 > 48\n";
+}
+void fourNumbers()
+{
+    std::cout << "67 > 57 > 48 > 27\n";
+}
+void fiveNumbers()
+{
+    std::cout << "67 > 57 > 48 > 37 > 27\n";
+}
+void sixNumbers()
+{
+    std::cout << "85 > 67 > 57 > 48 > 37 > 27\n";
+}
+void sevenNumbers()
+{
+    std::cout << "85 > 67 > 57 > 48 > 37 > 27 > 2\n";
+}
+void eightNumbers()
+{
+    std::cout << "85 > 72 > 67 > 57 > 48 > 37 > 27 > 2\n";
+}
+void nineNumbers()
+{
+    std::cout << "85 > 72 > 67 > 57 > 48 > 44 > 37 > 27 > 2\n";
+}
+void tenNumbers()
+{
+    std::cout << "92 > 85 > 72 > 67 > 57 > 48 > 44 > 37 > 27 > 2\n";
+}
