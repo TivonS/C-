@@ -1,0 +1,48 @@
+#include <iostream>
+
+
+int myPower(int, int);
+
+int main()
+{
+     int a, b, c = 0;
+
+     do
+     {
+         std::cout << "enter two numbers: ";
+         std::cin >> a;
+         std::cin >> b;
+
+         std::cout << myPower(a, b) << std::endl;
+
+         std::cout << "Another computation\n" << "0 for again\n" 
+             << "1 to end program\n" << std::endl;
+         std::cin >> c;
+
+     } while (c == 0);
+
+     return 0;
+}
+
+/*
+//takes a base an exponent and return the reselt
+int myPower(int base, int exp)
+{
+    int result = 1;
+
+    for (int i = 0; i < exp; i++)
+    {
+        result *= base;
+    }
+
+    return result;
+}
+*/
+//Takes a base and an exponenet and returns the result
+int myPower(int base, int exp)
+{
+    if (exp == 0) //base case
+        return 1;
+
+    return base * myPower(base, exp - 1);
+}
