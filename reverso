@@ -1,0 +1,38 @@
+#include <iostream>
+void reverso(int);
+
+
+int main()
+{
+	int forward;
+	int count = 1;
+
+	do
+	{
+		std::cout << "Enter numbers would you like to go reverse: ";
+		std::cin >> forward;
+		reverso(forward);
+		std::cout << "Boom! ";
+
+		std::cout << "Another number? ";
+		std::cin >> count;
+		switch (count)
+		{
+		case 'no':
+			count = 0;
+		}
+
+
+	} while (count == 1);
+}
+
+void reverso(int num)
+{
+	if (num <= 0)
+	{
+		return;
+	}
+	std::cout << num % 10;
+	reverso(num / 10);
+
+}
