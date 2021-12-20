@@ -1,0 +1,115 @@
+#include <iostream>
+#include <time.h>
+
+char R2D2();
+char CP3PO();
+char hanSolo();
+char lukeSkywalker();
+
+
+int main()
+{
+    std::cout << "Crew are we ready for blast off?";
+    int notGo = 0;
+    char Go = 0;
+
+    do
+    {
+        notGo = 0;
+
+        system("cls");
+        std::cout << "R2D2?" << std::endl;
+        if (R2D2() == 'N')
+        {
+            notGo++;
+            std::cout << "beeeeeep" << std::endl;
+        }
+        else
+        {
+            std::cout << "beep bop beep" << std::endl;
+        }
+
+        std::cout << "\nCP3PO?" << std::endl;
+        if (CP3PO() == 'N')
+        {
+            notGo++;
+            std::cout << "Wait one sec sir!" << std::endl;
+        }
+        else
+        {
+            std::cout << "Ready to go sir!" << std::endl;
+        }
+
+        std::cout << "\nHan?" << std::endl;
+        if (hanSolo() == 'N')
+        {
+            notGo++;
+            std::cout << "Wait one sec kid" << std::endl;
+        }
+        else
+        {
+            std::cout << "Hit the hyperdrive Chewie!" << std::endl;
+        }
+
+        std::cout << "\nLuke?" << std::endl;
+        if (lukeSkywalker() == 'N')
+        {
+            notGo++;
+            std::cout << "You want the impossible" << std::endl;
+        }
+        else
+        {
+            std::cout << "The force is with us" << std::endl;
+        }
+
+        system("pause");
+
+    } while (notGo != 0);
+}
+
+
+// 40% chance to launch, will return Y for launch otherwise will return N
+char R2D2()
+{
+    char result = 'N';
+
+    if (rand() % 100 + 1 <= 40)
+    {
+        result = 'Y';
+    }
+
+    return result;
+}
+// 50% chance to launch, will return Y for launch otherwise will return N
+char CP3PO()
+{
+    char result = 'N';
+    
+    if (rand() % 100 + 1 <= 50)
+    {
+        result = 'Y';
+    }
+    return result;
+}
+// 30% chance to launch, will return Y for launch othwerwise will return N
+char hanSolo()
+{
+        char result = 'N';
+
+        if (rand() % 100 + 1 <= 50)
+        {
+            result = 'Y';
+        }
+        return result;
+}
+// 20% chance to launch, will return Y for launch othwerwise will return N
+char lukeSkywalker()
+{
+    char result = 'N';
+
+    if (rand() % 100 + 1 <= 50)
+    {
+        result = 'Y';
+    }
+    return result;
+}
